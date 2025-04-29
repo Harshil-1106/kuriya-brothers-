@@ -1,120 +1,123 @@
-/* General Styles */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #f4f4f4;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 85, 136, 0.95);
+  color: white;
+  padding: 10px 20px;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.company-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.hero {
+  background: url('background.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  padding-top: 60px;
+}
+
+.hero::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  inset: 0;
+}
+
+.hero-text {
+  z-index: 2;
+}
+
+.hero-text h2 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 20px;
+}
+
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.grey-bg {
+  background-color: #eef5f9;
 }
 
 .container {
-  width: 80%;
+  max-width: 1000px;
   margin: auto;
-  overflow: hidden;
 }
 
-/* Header Section */
-header {
-  background: #00aaff;
-  color: white;
-  padding: 50px 0;
-  text-align: center;
+h2 {
+  font-size: 28px;
+  color: #005588;
+  margin-bottom: 20px;
 }
 
-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
+p, li {
+  font-size: 18px;
+  line-height: 1.6;
 }
 
-/* About Section */
-#about {
-  background: #fff;
-  padding: 30px 0;
-  text-align: center;
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-#about h2 {
-  color: #333;
-}
-
-#about img {
-  width: 100%;
-  max-width: 600px;
-  margin: 20px 0;
+img {
+  max-width: 100%;
   border-radius: 10px;
-}
-
-/* Business Details Section */
-#business {
-  background: #f9f9f9;
-  padding: 30px 0;
-}
-
-#business h2 {
-  color: #333;
-}
-
-#business img {
-  width: 100%;
-  max-width: 600px;
   margin: 20px 0;
-  border-radius: 10px;
 }
 
-/* Objectives Section */
-#objectives {
-  background: #fff;
-  padding: 30px 0;
-  text-align: center;
-}
-
-#objectives h2 {
-  color: #333;
-}
-
-/* Contact Section */
-#contact {
-  background: #f9f9f9;
-  padding: 30px 0;
-  text-align: center;
-}
-
-#contact h2 {
-  color: #333;
-}
-
-#contact a {
-  color: #00aaff;
-  text-decoration: none;
-}
-
-#contact a:hover {
-  text-decoration: underline;
-}
-
-/* Footer Section */
 footer {
-  background: #333;
+  background: #003344;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 20px 10px;
 }
 
-/* Scroll to Top Button */
-#scrollBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #00aaff;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 15px;
-  font-size: 20px;
-  display: none;
-  cursor: pointer;
+/* Scroll animation styles */
+.invisible {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
 }
 
-#scrollBtn:hover {
-  background-color: #005f75;
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
