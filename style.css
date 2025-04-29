@@ -12,7 +12,7 @@ body {
   width: 100%;
   background-color: rgba(0, 85, 136, 0.95);
   color: white;
-  padding: 10px 20px;
+  padding: 12px 20px;
   z-index: 999;
   display: flex;
   justify-content: center;
@@ -22,16 +22,16 @@ body {
 .nav-content {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .logo {
-  height: 40px;
+  height: 60px;
 }
 
 .company-name {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 700;
   color: white;
 }
 
