@@ -1,25 +1,17 @@
-// Scroll to Top Button
-window.onscroll = function() {scrollFunction()};
+const sections = document.querySelectorAll('.section');
+const options = {
+  threshold: 0.1
+};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    document.getElementById("scrollBtn").style.display = "block";
-  } else {
-    document.getElementById("scrollBtn").style.display = "none";
-  }
-}
-
-function topFunction() {
-  document.body.scrollTop = 0; 
-  document.documentElement.scrollTop = 0;
-}
-
-// Smooth Scrolling for Navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+const observer = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('fade-in');
+    observer.unobserve(entry.target);
   });
+}, options);
+
+sections.forEach(section => {
+  section.classList.add('invisible');
+  observer.observe(section);
 });
